@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 关于我的博客网站
-date: 2018-08-23 15:28:34.000000000 +08:00
+date: 2019-08-23 15:28:34.000000000 +08:00
 ---
 
 >浏览网页时偶然发现一个自己感觉比较简洁、漂亮的、符合自己口味的技术博客网站：[OneV's Den](https://onevcat.com/)，想着也按照博主的样式也自己搭建一个自己的博客网站，用于记录一些自己想记录的东西。
@@ -100,7 +100,7 @@ $ bundle exec jekyll serve
 
 启动成功之后，访问 <a href="http://127.0.0.1:4000" target="_blank">http://127.0.0.1:4000</a> 就可以看到搭建好的博客页面。
 
-<a>部署博客注意的地方：`bundle exec jekyll serve`指令之后，Jekyll默认监听的`127.0.0.0:4000`地址。所以只有 http://127.0.0.1:4000 才能访问到，即只能从本机电脑访问；如果需要从其他网络访问位置访问博客，需要加`--host`参数，让Jekyll监听的host为`0.0.0.0`：</a>
+>`bundle exec jekyll serve`指令之后，Jekyll默认监听的`127.0.0.0:4000`地址。所以只有 <a>http://127.0.0.1:4000</a> 才能访问到，即只能从本机电脑访问；如果需要从其他网络访问位置访问博客，需要加`--host`参数，让Jekyll监听的host为`0.0.0.0`。
 
 ```bash
 $ bundle exec jekyll serve --host 0.0.0.0
@@ -115,7 +115,7 @@ Configuration file: /root/LUZHO211/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
-<a>也可以使用`--port`参数拉来修改Jekyll监听的端口：</a>
+还可以可以使用`--port`参数拉来修改Jekyll监听的端口：
 
 ```bash
 $ bundle exec jekyll serve --host 0.0.0.0 --port 8080
@@ -129,6 +129,8 @@ Configuration file: /root/LUZHO211/_config.yml
     Server address: http://0.0.0.0:8080
   Server running... press ctrl-c to stop.
 ```
+
+使用`jekyll serve -h`来查看Jekyll启动服务时支持的其他启动参数。
 
 
 
