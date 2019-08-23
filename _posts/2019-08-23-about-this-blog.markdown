@@ -4,9 +4,9 @@ title: 关于我的博客网站
 date: 2019-08-23 15:28:34.000000000 +08:00
 ---
 
->浏览网页时偶然发现一个自己感觉比较简洁、漂亮的、符合自己口味的技术博客网站：[OneV's Den](https://onevcat.com/)，想着也按照博主的样式也自己搭建一个自己的博客网站，用于记录一些自己想记录的东西。
+>浏览网页时偶然发现一个自己感觉比较简洁、漂亮的技术博客网站：[OneV's Den](https://onevcat.com/)，想着也按照博主的样式也自己搭建一个自己的博客网站，用于记录一些自己想记录的东西。
 
-首先博客基于[Jekyll](https://jekyllrb.com/)博客框架来搭建，并采用[Vno - Jekyll](https://github.com/onevcat/vno-jekyll)作为博客主题。所以我们需要以下两步：
+首先，博客基于[Jekyll](https://jekyllrb.com/)博客框架来搭建，并采用[Vno - Jekyll](https://github.com/onevcat/vno-jekyll)作为博客主题。所以需要以下两步：
 
 - 安装Jekyll博客的开发环境
 - 配置Vno - Jekyll作为博客主题
