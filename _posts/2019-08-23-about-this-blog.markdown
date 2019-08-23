@@ -100,6 +100,36 @@ $ bundle exec jekyll serve
 
 启动成功之后，访问 <a href="http://127.0.0.1:4000" target="_blank">http://127.0.0.1:4000</a> 就可以看到搭建好的博客页面。
 
+<a>部署博客注意的地方：`bundle exec jekyll serve`指令之后，Jekyll默认监听的`127.0.0.0:4000`地址。所以只有 http://127.0.0.1:4000 才能访问到，即只能从本机电脑访问；如果需要从其他网络访问位置访问博客，需要加`--host`参数，让Jekyll监听的host为`0.0.0.0`：</a>
+
+```bash
+$ bundle exec jekyll serve --host 0.0.0.0
+Configuration file: /root/LUZHO211/_config.yml
+            Source: /root/LUZHO211
+       Destination: /root/LUZHO211/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+                    done in 0.408 seconds.
+ Auto-regeneration: enabled for '/root/LUZHO211'
+    Server address: http://0.0.0.0:4000
+  Server running... press ctrl-c to stop.
+```
+
+<a>也可以使用`--port`参数拉来修改Jekyll监听的端口：</a>
+
+```bash
+$ bundle exec jekyll serve --host 0.0.0.0 --port 8080
+Configuration file: /root/LUZHO211/_config.yml
+            Source: /root/LUZHO211
+       Destination: /root/LUZHO211/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+                    done in 0.419 seconds.
+ Auto-regeneration: enabled for '/root/LUZHO211'
+    Server address: http://0.0.0.0:8080
+  Server running... press ctrl-c to stop.
+```
+
 
 
 
