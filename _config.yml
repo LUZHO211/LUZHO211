@@ -1,11 +1,11 @@
 # Basic
 title: LUZ.HO211
 subtitle: 上善若水，人淡如菊
-welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
+welcome_message: <span>想要达到目的，就必须先留下点什么。<br />—— 牛顿第三定律</span>
 description: Anything can happen will happen.
-# creator: <a href="http://onev.cat">@onevcat</a>
+creator: <a href="http://onev.top">@LUZHO211</a>
 
-url: "http://vno.onevcat.com"
+# url: "http://vno.onevcat.com"
 
 permalink: /:year/:month/:title/
 
@@ -22,8 +22,8 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-    # - {title: 其他, description: My Projects, url: 'http://project.onevcat.com'}
-    # - {title: Another Button, description: A button, url: 'http://example.com'}
+     #- {title: 其他, description: My Projects, url: 'http://project.onevcat.com'}
+     #- {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
 plugins: [jekyll-paginate]

@@ -2,6 +2,7 @@
 layout: post
 title: 【译】在Java中正确使用wait，notify以及notifyAll
 date: 2019-08-24 11:18:10.000000000 +08:00
+tags: Java
 ---
 
 >*英文原文地址：[How to use wait, notify and notifyAll in Java - Producer Consumer Example](https://javarevisited.blogspot.com/2015/07/how-to-use-wait-notify-and-notifyall-in.html)，在保留原意的基础上对原文的代码稍有调整。*

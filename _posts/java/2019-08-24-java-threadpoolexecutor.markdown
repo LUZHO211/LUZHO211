@@ -1,7 +1,8 @@
 ---
 layout: post
-title: ThreadPoolExecutor——Java线程池的使用
+title: ThreadPoolExecutor的使用
 date: 2019-08-24 12:41:45.000000000 +08:00
+tags: Java
 ---
 
 ```java
@@ -49,7 +50,7 @@ public ThreadPoolExecutor(int corePoolSize,
 - corePoolSize —— 设置线程池的核心线程数
 - maximumPoolSize —— 设置线程池中允许存活的最大线程数
 
->线程池创建后，默认情况下线程池中不会有任何线程，当有线程任务提交到线程池中，线程池才会创建线程来处理任务。**但是如果显式调用了prestartAllCoreThreads()方法或者prestartCoreThread()方法，会立即创建核心线程。**
+>线程池创建后，默认情况下线程池中不会有任何线程，当有线程任务提交到线程池中，线程池才会创建线程来处理任务。但是如果显式调用了prestartAllCoreThreads()或者prestartCoreThread()方法，会立即创建核心线程。
 
 ```java
 ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
@@ -92,14 +93,14 @@ Java使用阻塞队列（BlockingQueue）作为线程池的工作队列，可以
 ### 线程池拒绝策略
 ThreadPoolExecutor内置了四种拒绝策略：
 
-- ThreadPoolExecutor.AbortPolicy：丢弃任务并抛出RejectedExecutionException，**默认的拒绝策略**。
-- ThreadPoolExecutor.DiscardPolicy：丢弃策略，丢弃任务但是不会抛出任何异常。
-- ThreadPoolExecutor.DiscardOldestPolicy：丢弃策略，丢弃队列头部的任务（oldest unhandled request）并重新尝试执行所提交的任务。
-- ThreadPoolExecutor.CallerRunsPolicy：调用者执行策略，将任务直接给提交该任务的线程来执行。
+- AbortPolicy：取消策略，丢弃任务并抛出RejectedExecutionException，默认的拒绝策略。
+- DiscardPolicy：丢弃策略，丢弃任务但是不会抛出任何异常。
+- DiscardOldestPolicy：丢弃策略，丢弃队列中最老的任务并尝试重新执行所提交的任务。
+- CallerRunsPolicy：调用者执行策略，将任务直接给提交该任务的线程来执行。
 
 >以上四种拒绝策略是 ThreadPoolExecutor 内置的，对于被拒绝的任务处理比较简单。当然，我们也可以根据我们的需求场景来继承这些策略类或者直接实现 RejectedExecutionHandler 接口来达到我们更复杂的拒绝策略。
 
-### 线程池内部处理逻辑（流程）：重点理解
+### 线程池内部处理逻辑（重点理解）
 
 - 当线程池中的线程数量**小于**核心线程数：新提交一个任务时，无论是否存在空闲的线程，线程池都将新建一个新的线程来执行新任务；
 - 当线程池中的线程数量**等于**核心线程数（核心线程已满）：新提交的任务会被存储到工作队列中，等待空闲线程来执行，**而不会创建新线程**；
@@ -175,6 +176,3 @@ public ScheduledThreadPoolExecutor(int corePoolSize) {
 
 - **FixedThreadPool**和**SingleThreadPool**所允许的工作队列最大容量为Integer.MAX_VALUE，这有可能会随着工作队列中的任务堆积而导致OOM；
 - **CachedThreadPool**和**ScheduledThreadPool**所允许创建的线程数量为Integer.MAX_VALUE，这也有可能因为创建大量线程导致OOM或者线程切换开销巨大。
-
-最好还是熟悉 ThreadPoolExecutor 的原理和用法，在Java提供的四种线程池不能满足需求，或者想把控整个线程池的情况下，可以自己使用 ThreadPoolExecutor 类来构建自定义的线程池。
-

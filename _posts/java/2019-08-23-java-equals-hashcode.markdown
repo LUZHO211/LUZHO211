@@ -2,6 +2,7 @@
 layout: post
 title: Java中的equals和hashCode
 date: 2019-08-23 23:36:15.000000000 +08:00
+tags: Java
 ---
 
 equals()和hashCode()是java.lang.Object类中定义的两个方法，这两个方法均用在对象比较的场景，即判断两个对象是否相等。在某些场景下，我们需要将我们自定义类的比较逻辑按照们的应用场景来工作，就可以通过覆写这两个方法来达到目的。
