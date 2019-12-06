@@ -51,7 +51,7 @@ $ curl -L get.rvm.io | bash -s stable
 安装完成之后，执行下面的指令来使RVM立即生效：
 
 ```bash
-source ~/.rvm/scripts/rvm
+$ source ~/.rvm/scripts/rvm
 ```
 
 来检查一下RVM是否已经成功安装以及生效：
@@ -132,6 +132,16 @@ Configuration file: /root/LUZHO211/_config.yml
 ```
 
 使用`jekyll serve -h`来查看Jekyll启动服务时支持的其他启动参数。
+
+### Jekyll博客以静态资源的方式部署
+
+如果博客文章写好了，想将博客文章打包成静态资源结合Web服务器（例如`Nginx`）进行部署，可以进入博客代码根目录执行如下指令，将文章打包成静态资源：
+
+```bash
+$ bundle install && jekyll build
+```
+
+成功运行完毕后，会在根目录下生成`_site`文件夹，这个文件夹里面就是我们要部署的博客文章静态资源。可以直接将这个文件夹拷贝到`Nginx`的静态资源部署目录下，即可完成部署。
 
 
 
