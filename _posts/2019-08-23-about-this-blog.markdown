@@ -5,9 +5,9 @@ date: 2019-08-23 15:28:34.000000000 +08:00
 tags: 不知所云
 ---
 
->浏览网页时偶然发现一个自己感觉比较简洁、漂亮的技术博客网站：[OneV's Den](https://onevcat.com/)，想着也按照博主的样式也自己搭建一个自己的博客网站，用于记录一些自己想记录的东西。
+>发现一个比较简洁的博客网站：[OneV's Den](https://onevcat.com/)，按照博主的样式也自己搭建一个，用于记录一些自己想记录的东西。
 
-首先，博客基于[Jekyll](https://jekyllrb.com/)博客框架来搭建，并采用[Vno - Jekyll](https://github.com/onevcat/vno-jekyll)作为博客主题。所以需要以下两步：
+博客基于[Jekyll](https://jekyllrb.com/)博客框架来搭建，并采用[Vno - Jekyll](https://github.com/onevcat/vno-jekyll)作为博客主题。所以博客的搭建需要以下两步：
 
 - 安装Jekyll博客的开发环境
 - 配置Vno - Jekyll作为博客主题
@@ -22,7 +22,7 @@ ruby 2.3.7p456 (2018-03-28 revision 63024) [universal.x86_64-darwin18]
 
 >根据[Jekyll官网](https://jekyllrb.com/)中介绍的“三大步”安装教程，可以很快搭建一个静态博客网站。
 
-首先，我们执行下面的指令来安装一下Jekyll：
+首先，我们执行下面的指令来安装 Jekyll：
 
 ```bash
 $ gem install bundler jekyll
@@ -77,15 +77,15 @@ $ ruby -v
 ruby 2.6.3p62 (2019-04-16 revision 67580) [x86_64-darwin18]
 ```
 
-没错了，接下来可以继续安装我们的Jekyll：
+没错了，接下来继续安装我们的Jekyll：
                            
 ```bash
 $ gem install bundler jekyll
 ```
 
-这个安装可能会有点耗时，需要耐心等待。。。
+这个安装可能会有点耗时，请耐心等待安装Jekyll完成 ...
 
-### 使用`Vno - Jekyll`作为博客主题
+### 使用Vno - Jekyll作为博客主题
 
 上一章将Jekyll开发环境搭建好了，接下来可以结合[Vno - Jekyll](https://github.com/onevcat/vno-jekyll)主题来搭建自己的博客。很简单，根据[Vno - Jekyll主题使用介绍](https://vno.onevcat.com/2016/02/hello-world-vno/)中的“四部曲”走起来：
 
@@ -141,7 +141,7 @@ Configuration file: /root/LUZHO211/_config.yml
 $ bundle install && jekyll build
 ```
 
-成功运行完毕后，会在根目录下生成`_site`文件夹，这个文件夹里面就是我们要部署的博客文章静态资源。可以直接将这个文件夹拷贝到`Nginx`的静态资源部署目录下，即可完成部署。
+成功运行完毕后，会在根目录下生成`_site`文件夹，这个文件夹里面就是我们要部署的博客文章静态资源。直接将这个文件夹拷贝到`Nginx`的静态资源部署目录下，即可完成部署。
 
 
 
