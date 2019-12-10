@@ -26,7 +26,7 @@ tags: Java
 $ mv jdk-8u221-linux-x64.tar.gz /usr/local/
 ```
 
-- `cd /usr/local/`进入JDK压缩文件所在目录并解压文件（**解压完毕即安装成功**），将得到`jdk1.8.0_221`文件夹：
+- 进入JDK压缩文件所在目录并解压文件（**解压完毕即安装成功**），将得到`jdk1.8.0_221`文件夹：
 
 ```bash
 $ tar -zxvf jdk-8u221-linux-x64.tar.gz
