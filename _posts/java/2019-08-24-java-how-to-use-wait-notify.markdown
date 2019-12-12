@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【译】在Java中正确使用wait，notify以及notifyAll
+title: 正确使用wait，notify和notifyAll
 date: 2019-08-24 11:18:10.000000000 +08:00
 tags: Java
 ---

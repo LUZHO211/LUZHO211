@@ -1,22 +1,24 @@
 ---
 layout: post
-title: JDK的安装
+title: Java开发环境搭建
 date: 2019-08-23 10:28:34.000000000 +08:00
 tags: Java
 ---
 
-### Windows系统安装JDK
->**本文使用Windows 10系统版本来做演示；JDK版本为`1.8.0_221`。**
+>主要是指JDK安装以及JDK环境变量配置的问题。
+
+### 一、Windows系统安装JDK
+>本文使用Windows 10系统版本来做演示；JDK版本为 1.8.0_221。
 
 #### 下载并安装JDK
-- 到[Oracle官网](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)下载适合自己系统的JDK版本，本文使用 jdk-8u221-windows-x64.exe 版本。
-- 双击 jdk-8u221-windows-x64.exe 进行安装，并记录安装的目录，这里安装目录为 `D:\Program files\Java\jdk1.8.0_221`。
+- 到[Oracle官网](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)下载适合自己系统的JDK版本，本文使用 jdk-8u221-windows-x64.exe 版本；
+- 双击 `exe` 进行安装，并记录安装的目录，这里安装目录为 `D:\Program files\Java\jdk1.8.0_221`。
 
 #### 配置Java环境变量
 
 
-### Linux系统安装JDK
->**本文使用Ubuntu 16.04.6 LTS系统版本来做演示；JDK版本为`1.8.0_221`。**
+### 二、Linux系统安装JDK
+>本文使用Ubuntu 16.04.6 LTS系统版本来做演示；JDK版本为 1.8.0_221。
 
 #### 下载并解压（安装）JDK
 - 到[Oracle官网](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)下载适合自己系统的`JDK`版本，本文将使用`jdk-8u221-linux-x64.tar.gz`这个版本来做演示。
@@ -54,8 +56,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.221-b11, mixed mode)
 
 **出现以上信息说明成功安装JDK并且环境变量配置正确。否则需要检查环境变量的配置是否正确。**
 
-### Mac OS系统安装JDK
->**本文使用macOS Mojave 10.14.6系统版本来做演示；JDK版本为`1.8.0_221`。**
+### 三、Mac OS系统安装JDK
+>本文使用macOS Mojave 10.14.6系统版本来做演示；JDK版本为 1.8.0_221。
 
 #### 下载并安装JDK
 - 到[Oracle官网](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)下载适合自己系统的JDK版本，本文使用`jdk-8u221-macosx-x64.dmg`版本。
@@ -96,8 +98,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.221-b11, mixed mode)
 
 **出现以上信息说明成功安装JDK并且环境变量配置正确。否则需要检查环境变量的配置是否正确。**
 
-### 4 关于CLASSPATH环境变量
->**JDK 1.5之后，不需要再设置`CLASSPATH`环境变量。**
+### 四、关于CLASSPATH环境变量
+>JDK 1.5之后，不需要再设置`CLASSPATH`环境变量。
 
 - `CLASSPATH`环境变量作用在于告诉JER在运行Java程序时，该去哪里搜索程序所依赖的JDK类库。JDK 1.5之后已经不需要再设置`CLASSPATH`环境变量了，JRE会自动找到类库路径。
 - 但是对于我们自己写的一些简单测试程序，可以通过`-classpath`或者`-cp`来指定依赖的其他第三方库的路径：
