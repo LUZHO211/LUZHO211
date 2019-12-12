@@ -12,7 +12,7 @@ tags: Java
 
 #### 下载并安装JDK
 - 到[Oracle官网](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)下载适合自己系统的JDK版本，本文使用 jdk-8u221-windows-x64.exe 版本；
-- 双击 `exe` 进行安装，并记录安装的目录，这里安装目录为 `D:\Program files\Java\jdk1.8.0_221`。
+- 双击 `exe` 文件安装，并记录安装的目录，例如：`D:\Program files\Java\jdk1.8.0_221`。
 
 #### 配置Java环境变量
 
@@ -22,7 +22,7 @@ tags: Java
 
 #### 下载并解压（安装）JDK
 - 到[Oracle官网](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)下载适合自己系统的`JDK`版本，本文将使用`jdk-8u221-linux-x64.tar.gz`这个版本来做演示。
-- 将下载的文件放到某个目录下，例如`/usr/local`
+- 将下载的文件放到某个目录下，例如：`/usr/local`
 
 ```bash
 $ mv jdk-8u221-linux-x64.tar.gz /usr/local/
