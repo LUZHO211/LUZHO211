@@ -148,7 +148,8 @@ public static Object newProxyInstance(ClassLoader loader, Class<?>[] interfaces,
             checkProxyAccess(Reflection.getCallerClass(), loader, intfs);
         }
 
-        // 根据接口的Class信息创建出代理对象的Class对象
+        // 这里是重点：根据接口的Class信息创建出代理对象的Class对象
+        // 最终这里可以生成我们所需要的代理对象的Class对象，有了Class对象我们就通过反射创建代理对象了！
         Class<?> cl = getProxyClass0(loader, intfs);
         
         // ... ...
