@@ -204,7 +204,7 @@ public class Proxy implements java.io.Serializable {
 }
 ```
 
-代理对象继承`java.lang.reflect.Proxy`之后也就变相拥有了这个`InvocationHandler`实例，这也就是为什么调用代理对象的方法最终都会调用到`InvocationHandler`的`invoke`方法，从而转到目标对象的同名方法上去。
+代理对象继承`java.lang.reflect.Proxy`之后也就间接拥有了这个`InvocationHandler`实例，这也就是为什么调用代理对象的方法最终都会调用到`InvocationHandler`的`invoke`方法，从而转到目标对象的同名方法上去。
 
 ### 四、题外话：CGLIB动态代理
 
