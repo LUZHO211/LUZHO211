@@ -90,6 +90,42 @@ $ locate test-file
 
 >updatedb命令会根据/etc/updatedb.conf配置文件中的配置去搜索对应的目录文件，然后更新/var/lib/mlocate目录中的文件档案数据库。
 
+### 三、which
+
+which命令用于搜索可执行的命令文件，例如查找`vim`、`ls`、`touch`等命令，想知道某个Linux命令位于哪个目录下，用which就对了。which会根据PATH环境变量中设定的目录去查找命令文件。
+
+```bash
+范例1：搜索which命令所在目录
+$ which which
+/sbin/ifconfig
+
+范例2：搜索ls命令所在目录
+$ which ls
+/bin/ls
+
+范例3：搜索history命令所在目录
+$ which history
+
+搜索不到history，因为history是bash内建的命令，并不在PATH所指定的目录中。
+```
+
+### 四、whereis
+
+whereis命令跟find命令一样也是直接搜索硬盘，只不过whereis搜索的是特定的一些目录。使用`whereis -l`来查看whereis命令搜索的目录：
+
+```bash
+$ whereis -l
+bin: /usr/bin
+bin: /usr/sbin
+... ...
+man: /usr/share/man/pt
+man: /usr/share/info
+src: /usr/src/linux-headers-4.4.0-148-generic
+src: /usr/src/linux-headers-4.4.0-159-generic
+src: /usr/src/linux-headers-4.4.0-148
+src: /usr/src/linux-headers-4.4.0-159
+```
+
 
 <br /><br />
 *参考文章*
