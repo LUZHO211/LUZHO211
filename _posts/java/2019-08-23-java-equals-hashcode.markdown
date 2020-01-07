@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java-equals-hashCode
+title: Java的equals和hashCode方法
 date: 2019-08-26 23:36:15.000000000 +08:00
 tags: Java
 ---
@@ -11,13 +11,11 @@ tags: Java
 package java.lang;
 
 public class Object {
-    
     public boolean equals(Object obj) {
         return (this == obj);
     }
     
     public native int hashCode();
-
 }
 ```
 
@@ -36,7 +34,7 @@ public class Object {
 
 定义一个Book类，我们自定义的对比机制为：当且仅当两本书的id和name都一样的时候，我们认为它们一样（相等，是同一本书）；否则不一样（不是同一本书）。
 
-- 不覆写equals和hashCode的情况：
+*不覆写equals和hashCode的情况：*
 
 ```java
 public class Book {
@@ -54,7 +52,7 @@ public class Book {
 }
 ```
 
-测试代码1如下所示：
+*测试代码1如下所示：*
 
 ```java
 private static void test1() {
@@ -73,7 +71,7 @@ book2.hashCode(): 1058025095
 
 根据场景预设，只要id和name相同我们就认为是同一本书，所以equals对比的结果为`true`才符合我们的预期。但是结果并相同，这是因为我们并没有覆写equals方法，所以默认是对比两个对象的地址。上述测试代码分别`new`了两个Book对象，地址肯定不一样，所以对比结果为`false`。
 
-- 仅覆写equals的情况：现在我们在Book类中覆写equals方法，自定义对比机制
+*仅覆写equals的情况：现在我们在Book类中覆写equals方法，自定义对比机制*
 
 ```java
 @Override
@@ -130,9 +128,9 @@ Book[id: 1, name: Effective Java]： null
 查询结果为`null`，说明这本书（`id=1 && name=Effective Java`）在库存中不存在。我们明明已经将这本书的库存设置成10了！哪里出了问题？
 **前面提到，任何时候覆写equals，必须同时覆写hashCode方法，否则在结合散列集合将无法正确工作！**
 
-<a>这是因为，散列集合在添加、查找元素的时候都用到了hashCode方法。例如 HashMap 在put或者get的时候，都会先将Key对象的hashCode返回值进行计算，得到一个hash值，根据这个值去定位Value的位置。从上面的测试结果可知，虽然是同一本书，但是它们的hashCode返回值却不同。这就导致HashMap认为book1和book2是两个不同的Key，所以我们在put(book1, 10)却get(book2)的时候肯定找不到这本书。</a>
+这是因为，散列集合在添加、查找元素的时候都用到了hashCode方法。例如 HashMap 在put或者get的时候，都会先将Key对象的hashCode返回值进行计算，得到一个hash值，根据这个值去定位Value的位置。从上面的测试结果可知，虽然是同一本书，但是它们的hashCode返回值却不同。这就导致HashMap认为book1和book2是两个不同的Key，所以我们在put(book1, 10)却get(book2)的时候肯定找不到这本书。
 
-- 同时覆写 equals 和 hashCode 方法
+*同时覆写 equals 和 hashCode 方法：*
 
 ```java
 @Override
@@ -156,7 +154,7 @@ public int hashCode() {
 }
 ```
 
-然后我们再运行test2()测试代码，结果如下：
+*然后我们再运行test2()测试代码，结果如下：*
 
 ```java
 book1.equals(book2): true
