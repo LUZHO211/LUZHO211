@@ -1,6 +1,6 @@
 ---
 layout: post
-title: telnet invoke缺少fastjson惹的祸
+title: Dubbo telnet：invoke缺少fastjson惹的祸
 date: 2019-12-14 14:52:22.000000000 +08:00
 tags: Dubbo
 ---
