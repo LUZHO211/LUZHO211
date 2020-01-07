@@ -9,6 +9,8 @@ tags: MySQL
 
 ### 一、问题描述
 
+>前提条件：使用的数据库版本为 MySQL 5.7
+
 有一张数据表：业务线数据表 `business_line` 的内容如下：
 
 ```bash
@@ -31,7 +33,7 @@ mysql> SELECT * FROM business_line;
 +----+---------------+------------+--------+---------------------+---------------------+
 ```
 
->`created_time`字段设计为`DEFAULT CURRENT_TIMESTAMP`，且由于表中的数据是使用`INSERT`语句批量一次性插入数据表中，所以每一行数据中的`created_time`字段值都是`2019-12-10 11:07:04`，这是问题的前提。
+>`created_time`字段设计为`DEFAULT CURRENT_TIMESTAMP`，且由于表中的数据是使用`INSERT`语句批量一次性插入数据表中，所以每一行数据中的`created_time`字段值都是`2019-12-10 11:07:04`，这是前提。
 
 我的需求是在前端页面使用分页 + 按`created_time`降序排序的查询规则来查询并展示这个表的数据，分页语句为：`SELECT * FROM business_line ORDER BY created_time DESC LIMIT #{count} OFFSET #{offset};`
 
