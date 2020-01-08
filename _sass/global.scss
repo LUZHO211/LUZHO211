@@ -189,14 +189,16 @@ table {
   text-align: center;
   line-height: 40px;
   border-spacing: 0;
-  border: 2px solid darken($primary-color, 10%);
+  // border: 1px solid darken($primary-color, 10%);
+  border: 1px solid darken(#DDDDDD, 10%);
   width: 100%;
   margin: 20px auto;
 }
 
 thead tr:first-child {
-  background-color: darken($primary-color, 10%);
-  color: $gray-lightest;
+  background-color: darken(#DDDDDD, 10%);
+  // color: $gray-lightest;
+  color: #565353;
   border: none;
 }
 

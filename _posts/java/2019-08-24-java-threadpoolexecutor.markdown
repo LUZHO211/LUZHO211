@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ThreadPoolExecutor的使用
+title: Java线程池的使用
 date: 2019-08-24 12:41:45.000000000 +08:00
 tags: Java
 ---
@@ -135,36 +135,26 @@ public Future<?> submit(Runnable task) {
 
 
 ## Executors工具类
-Java提供了 java.util.concurrent.Executors 这个工具类来帮助开发者快速创建定义好的四种线程池：FixedThreadPool、SingleThreadPool、CachedThreadPool以及ScheduledThreadPool。
+Java提供了`java.util.concurrent.Executors`这个工具类来帮助开发者快速创建线程池：
 
 - `Executors.newFixedThreadPool(int nThreads)`：创建一个固定数量线程的线程池，池中的线程数量**达到最大值后会始终保持不变**。
 - `Executors.newSingleThreadExecutor()`：创建一个只包含单个线程的线程池，可以保证所有任务按提交的顺序被单一的一个线程串行地执行。
 - `Executors.newCachedThreadPool()`：创建一个会根据任务按需地创建、回收线程的线程池。这种类型线程池适合执行数量多、耗时少的任务。
 - `Executors.newScheduledThreadPool(int corePoolSize)`：创建一个具有定时功能的线程池，适用于执行定时任务。
 
->**这些线程池本质上是对 ThreadPoolExecutor 进行封装。**
-
-#### newFixedThreadPool
+>**这些线程池本质上也是对 ThreadPoolExecutor 进行封装。**
 
 ```java
+// newFixedThreadPool
 new ThreadPoolExecutor(nThreads, nThreads, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
-```
 
-#### newSingleThreadExecutor
-
-```java
+// newSingleThreadExecutor
 new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
-```
 
-#### newCachedThreadPool
-
-```java
+// newCachedThreadPool
 new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
-```
 
-#### newScheduledThreadPool
-
-```java
+// newScheduledThreadPool
 new ScheduledThreadPoolExecutor(corePoolSize);
 
 public ScheduledThreadPoolExecutor(int corePoolSize) {
