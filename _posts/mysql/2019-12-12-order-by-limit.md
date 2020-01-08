@@ -215,3 +215,5 @@ mysql> SELECT * FROM business_line ORDER BY created_time DESC LIMIT 10 OFFSET 10
 
 从结果上看，MySQL 8.0版本已经默认处理了这种情况，即如果排序字段值相同，则会再根据自增ID进行排序。
 
+然而在官方的手册文档上，关于这部分的说明仍跟5.7版本一样：[8.2.1.19 LIMIT Query Optimization](https://dev.mysql.com/doc/refman/8.0/en/limit-optimization.html)，不知道为何，也许文档没来得及修改？
+
