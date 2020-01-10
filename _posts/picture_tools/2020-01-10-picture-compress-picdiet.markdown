@@ -11,7 +11,7 @@ tags: 工具集
 
 > 还有这个：[tinypng](https://tinypng.com)
 
-![tiny.png](/assets/images/2020-01/tinypng.png)
+![tiny.png](/assets/images/2020-01/tinypng.jpg)
 
 
 还有很多类似在线图片压缩网站，这两个都是免费的。其他就没空找了，这两个先用着。
