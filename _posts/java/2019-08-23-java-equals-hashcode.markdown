@@ -25,7 +25,7 @@ public class Object {
 
 `hashCode`方法的作用是为对象生成一个int类型的哈希码（hashcode），其主要用于配合Java中基于散列的集合一起工作，比如HashMap、HashTable以及HashSet。
 
-### 二、覆写 equals 和 hashCode 方法
+### 二、覆写equals和hashCode方法
 
 要自定义对象的对比逻辑，我们需要覆写对象的equals方法。**如果覆写了equals方法，那么必须同时覆写hashCode方法。因为如果仅仅覆写equals，对象的对比机制可能在某些业务场景能正常工作，但是在结合散列集合（如HashMap）工作的时候，将不能正确按照我们的预期工作！**
 
