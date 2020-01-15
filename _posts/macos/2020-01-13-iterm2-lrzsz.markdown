@@ -38,7 +38,7 @@ $ chmod +x /usr/local/bin/iterm2-send-zmodem.sh /usr/local/bin/iterm2-recv-zmode
 |`rz waiting to receive.\*\*B0100`|Run Silent Coprocess|/usr/local/bin/iterm2-send-zmodem.sh|`checked`|
 |`\*\*B00000000000000`|Run Silent Coprocess|/usr/local/bin/iterm2-recv-zmodem.sh|`checked`|
 
-**注意：最后一项Instant一定要够选上！** 如下图的配置：
+**注意：最后一项Instant一定要勾选上！** 如下图的配置：
 
 ![iterm2-config.png](/assets/images/2020-01/iterm2-config.png)
 
