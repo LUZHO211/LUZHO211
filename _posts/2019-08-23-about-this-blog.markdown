@@ -12,7 +12,7 @@ tags: 不知所云
 - 安装Jekyll博客的开发环境
 - 配置Vno - Jekyll作为博客主题
 
-### 安装Jekyll博客开发环境
+### 一、安装Jekyll博客开发环境
 Jekyll依赖Ruby语言环境，所以要先安装Ruby。我自己电脑（Mac OS）本身自带了Ruby，版本为：
 
 ```bash
@@ -85,12 +85,12 @@ $ gem install bundler jekyll
 
 这个安装可能会有点耗时，请耐心等待安装Jekyll完成 ...
 
-### 使用Vno - Jekyll作为博客主题
+### 二、使用Vno - Jekyll作为博客主题
 
 上一章将Jekyll开发环境搭建好了，接下来可以结合[Vno - Jekyll](https://github.com/onevcat/vno-jekyll)主题来搭建自己的博客。很简单，根据[Vno - Jekyll主题使用介绍](https://vno.onevcat.com/2016/02/hello-world-vno/)中的“四部曲”走起来：
 
 >**特别需要注意：**[Vno - Jekyll主题使用介绍](https://vno.onevcat.com/2016/02/hello-world-vno/)这里面Usage中的指令有错误的：<br />
->文中指令`bundler install`和`bundler exec jekyll serve`中**应该是`bundle`而不是`bundler`。** 因为我按照文中的介绍来执行指令，发现一直报错。我查了半天，才发现问题...
+>文中指令`bundler install`和`bundler exec jekyll serve`中应该是**`bundle`**而不是**`bundler`**。因为我按照文中的介绍来执行指令，发现一直报错。我查了半天，才发现问题🤷‍♂️ ...
 
 ```bash
 $ git clone https://github.com/onevcat/vno-jekyll.git your_site
@@ -101,7 +101,7 @@ $ bundle exec jekyll serve
 
 启动成功之后，访问 <a href="http://127.0.0.1:4000" target="_blank">http://127.0.0.1:4000</a> 就可以看到搭建好的博客页面。
 
->`bundle exec jekyll serve`指令之后，Jekyll默认监听的`127.0.0.0:4000`地址。所以只有 <a>http://127.0.0.1:4000</a> 才能访问到，即只能从本机电脑访问；如果需要从其他网络访问位置访问博客，需要加`--host`参数，让Jekyll监听的host为`0.0.0.0`。
+>Jekyll默认监听的host是`127.0.0.0`，只能从本机电脑访问；加上`--host`参数让Jekyll监听的host为`0.0.0.0`。
 
 ```bash
 $ bundle exec jekyll serve --host 0.0.0.0
@@ -133,7 +133,7 @@ Configuration file: /root/LUZHO211/_config.yml
 
 使用`jekyll serve -h`来查看Jekyll启动服务时支持的其他启动参数。
 
-### Jekyll博客以静态资源的方式部署
+### 三、将Jekyll博客以静态资源方式部署
 
 如果博客文章写好了，想将博客文章打包成静态资源结合Web服务器（例如`Nginx`）进行部署，可以进入博客代码根目录执行如下指令，将文章打包成静态资源：
 
