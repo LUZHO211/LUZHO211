@@ -116,7 +116,7 @@ Configuration file: /root/LUZHO211/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
-还可以可以使用`--port`参数拉来修改Jekyll监听的端口：
+还可以使用`--port`参数来修改Jekyll监听的端口：
 
 ```bash
 $ bundle exec jekyll serve --host 0.0.0.0 --port 8080
