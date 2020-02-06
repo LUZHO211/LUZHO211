@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Java中正确使用wait，notify和notifyAll
+title: 【译】以生产者-消费者模型来阐释Java中如何正确使用wait，notify和notifyAll
 date: 2019-08-24 11:18:10.000000000 +08:00
 tags: Java
 ---
 
->*英文原文地址：[How to use wait, notify and notifyAll in Java - Producer Consumer Example](https://javarevisited.blogspot.com/2015/07/how-to-use-wait-notify-and-notifyall-in.html)，在保留原意的基础上对原文的代码稍有调整。*
+>*此文为自己翻译的文章，在保留原意的基础上对原文的代码稍有调整。<br /> 英文原文地址：[How to use wait, notify and notifyAll in Java - Producer Consumer Example](https://javarevisited.blogspot.com/2015/07/how-to-use-wait-notify-and-notifyall-in.html)。*
 
 在Java中，可以使用wait，notify和notifyAll方法来实现线程间的通信。
 
@@ -15,7 +15,7 @@ tags: Java
 
 >在这篇文章中，你将会学习到如何使用wait，notify和notifyAll方法实现线程间通信，并解决生产者-消费者的问题。如果你真正想掌握并发和多线程，我强烈建议你读一读《Java Concurrency In Practice》这本书，作者是Brian Goetz。没读过此书，你对Java多线程的理解是不完整的。
 
-## 如何在代码中使用wait和notify方法
+## 一、如何在代码中使用wait和notify方法
 wait和notify都是定义在java.lang.Object类中的方法。虽然它们都是很基础的概念，但是想在实际代码中使用它们却不是那么容易呢。不信你可以在面试中让面试者使用wait和notify徒手撸代码来解决**生产者-消费者问题**？我相信很多人会一脸的疑惑。
 很多人都会对这个问题不知所措或者错误地使用wait和notify，例如代码块使用同步的地方错了、没有用正确的对象来调用wait方法。老实说，这些困扰着很多程序员。
 
@@ -27,7 +27,7 @@ wait和notify都是定义在java.lang.Object类中的方法。虽然它们都是
 
 <a>答案是：加锁的对象和你要获取锁的对象应该是同一个！在这个例子中，就是那个队列的对象实例。</a>
 
-## 在循环体中调用wait方法，而非if代码块中
+## 二、在循环体中调用wait方法，而非if代码块中
 你现在已经知道需要使用一个同步的、共享的对象来调用wait方法，接下来要做的就是在`while`循环中调用wait方法，而不是在`if`代码块中调用。
 我们需要在某些条件成立的情况下调用wait方法，例如生产者线程应该在队列满的时候调用wait。这时候我们首先会想到使用`if`来判断条件是否成立。但是在`if`代码块中调用wait方法可能会产生BUG，因为线程有可能会在等待条件未改变的情况下被**虚假唤醒（spurious wakeup）**。如果没有使用循环来在线程唤醒后检查等待条件，就很可能会造成错误。例如会造成往满队列中写数据或者从空队列中取数据。这就是我们应该在循环体中调用wait，而不是在`if`块中调用wait的原因。
 另外，我也推荐阅读《Effective Java》这本书里面关于这部分内容的描述，也许是wait和notify使用的最佳实践。
@@ -45,7 +45,7 @@ synchronized (sharedObject) {
 
 正如我所说的那样，始终应该在循环体中调用wait。这个循环体是用来对线程**进入等待**和**被唤醒后**的条件进行检测。**如果条件成立，并且notify或notifyAll方法在线程执行wait方法之前被调用了，线程就有可能一直wait，导致死锁。**
 
-## 正确使用wait，notify和notifyAll的例子
+## 三、正确使用wait，notify和notifyAll的例子
 >这个例子将演示如何使用我们上面讨论的标准方法来使用wait，notify和notifyAll方法。
 >在这个例子中，我们有两个线程：生产者线程和消费者线程，分别由Producer和Consumer两个类来表示。我们使用LinkedList对象实例作为共享的消息队列。
 
@@ -133,7 +133,8 @@ public class Launcher {
     
 }
 ```
-**执行的结果如下日志所示：**
+执行的结果如下日志所示：
+
 ```bash
 2019-08-24 14:59:46.149 INFO  [producer-thread] 生产消息: 1
 2019-08-24 14:59:47.166 INFO  [producer-thread] 生产消息: 2
@@ -176,7 +177,7 @@ public class Launcher {
 2019-08-24 15:00:04.175 INFO  [producer-thread] 生产消息: 19
 2019-08-24 15:00:04.175 INFO  [producer-thread] 消息队列已满: 生产者线程调用wait方法进入等待状态 ...
 ```
-## 写在最后
+## 四、写在最后
 - 你可以使用wait和notify方法来实现Java的线程间通信。不仅一个或两个线程可以这样做，多线程之间同样可以使用这种方法达到线程间通信的目的。
 - 要在同步方法或者同步块中调用wait，notify和notifyAll方法，否则JVM会抛IllegalMonitorStateException。
 - 要在循环体中调用wait和notify方法，不要在`if`块中调用。因为循环可以做到在wait前后对条件进行检测。
