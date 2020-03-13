@@ -1,18 +1,4 @@
----
-layout: post
-title: Java获取HTTP请求中客户端真实IP的工具类
-date: 2020-03-13 14:48:15.000000000 +08:00
-tags: Java
----
-
-有时候需要在服务器端获取HTTP请求客户端的真实IP地址，这里记录一下。
-
-点击下载java文件：[IPUtils.java](/assets/files/java/IPUtils.java) 
-
-或者完整的工具类代码如下所示：
-
-```java
-package com.pandaq.ip.util;
+package com.wacai.loan.authorize.util;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
@@ -143,4 +129,3 @@ public final class IPUtils {
     }
 
 }
-```
