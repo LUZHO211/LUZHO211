@@ -7,7 +7,7 @@ tags: Java
 
 有时候需要在服务器端获取HTTP请求客户端的真实IP地址，这里记录一下。
 
-点击下载java文件：[IPUtils.java](/assets/files/java/IPUtils.java) 
+点击下载工具类的Java源代码文件：[IPUtils.java](/assets/files/java/IPUtils.java) 
 
 或者完整的工具类代码如下所示：
 
